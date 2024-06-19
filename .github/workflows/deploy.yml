@@ -1,5 +1,4 @@
 name: CI/CD for Strapi Using GithubActions
-
 on:
   push:
     branches:
