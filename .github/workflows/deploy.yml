@@ -15,7 +15,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '18'
 
     - name: Upgrade npm
       run: npm install -g npm@latest
@@ -27,7 +27,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
+        username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           set -e
