@@ -35,6 +35,14 @@ jobs:
           sudo apt install -y nodejs npm
           sudo npm install -g pm2
 
+          # Define project directory
+          PROJECT_DIR="/home/ubuntu/Strapi-CICD"
+
+           # Remove the existing directory if it exists to avoid conflicts
+            if [ -d "$PROJECT_DIR" ]; then
+              rm -rf "$PROJECT_DIR"
+            fi
+
           # Clone the Strapi repository
           git clone https://github.com/haripriya2413/Strapi-CICD
           cd Strapi-CICD
